@@ -25,6 +25,7 @@ def prepare_dataset(path = 'dumps/netaporter_gb.json'):
   regular_price_list = []
   Discount_percentage = []
   brands_list = []
+  json_data = pd.read_json("dumps/netaporter_gb.json", lines=True)
   for products in range(0,len(json_data)):
     price_dict = json_data['price'].values[products]
     dump = json.dumps(price_dict)
@@ -195,7 +196,7 @@ if __name__ == '__main__':
     init_files('dumps/netaporter_gb.json') 
     
     # PREPARING DATASET
-    prepare_dataset('dumps/netaporter_gb.json')
-    
+    p_data = prepare_dataset('dumps/netaporter_gb.json')
+    Process_request()
     # RUNNNING FLASK APP
     app.run(debug=True, host = '0.0.0.0', port=5000)
