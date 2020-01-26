@@ -7,5 +7,6 @@ Werkzeug==0.15.5
 numpy>=1.9.2
 scipy>=0.15.1
 gdown == 3.10.0
+flask-core == 2.9.0
 pandas>=0.19
 
